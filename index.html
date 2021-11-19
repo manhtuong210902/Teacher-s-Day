@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Day</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div class="container">
+    <div class="balloon">
+        <div><span>H</span></div>
+        <div><span>A</span></div>
+        <div><span>P</span></div>
+        <div><span>P</span></div>
+        <div><span>Y</span></div>
+        <div><span>T</span></div>
+        <div><span>E</span></div>
+        <div><span>A</span></div>
+        <div><span>C</span></div>
+        <div><span>H</span></div>
+        <div><span>E</span></div>
+        <div><span>R</span></div>
+        <div><span>'S</span></div>
+        <div><span>D</span></div>
+        <div><span>A</span></div>
+        <div><span>Y</span></div>
+    </div>
+    <div class="avatar">
+        <!-- 3. Avatar của người bạn muốn gởi lời chúc -->
+        <img src="Screenshot 2021-11-19 220706.png" alt="" class="avatar__img" onclick="showMessage()" />
+        <!-- 4. Tên của người đó -->
+        <h1 onclick="showVideo()" class="avatar__title">THẦY ÂN</h1>
+    </div>
+    
+    <div class="video_overlay">
+        <div class="video_block">
+            <h3 class="video_text">LỜI CHÚC ĐẾN THẦY</h3>
+            <video class="video_office" width="700" height="400" controls>
+                <source src="myvideo.mp4" type="video/mp4"> 
+            </video>
+            <button onclick="stopVideo()" class="video_btn">
+                STOP
+            </button>
+        </div>
+    </div>
+    <!-- 5. Phần nhạc -->
+    <audio id="player" autoplay loop>
+        <source src="./music.mp3" type="audio/mp3">
+    </audio>
+</div>
+<script>
+   var videoBlock = document.querySelector(".video_overlay");
+   function showVideo(){
+        videoBlock.style.display = "flex";
+   }
+   function stopVideo(){
+        videoBlock.style.display = "none";
+   }
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
