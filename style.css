@@ -502,13 +502,19 @@ h1 {
     border: 5px solid #4430b6;
 }
 
+.btn{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
 .video_btn{
     margin: 20px 0;
     font-size: 20px;
     font-weight: 700;
     color: #4430b6;
     background-color: #fdc045;
-    width: 250px;
+    width: 300px;
     height: 50px;
     border-radius: 10px;
     border: 5px solid #4430b6;

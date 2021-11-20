@@ -31,7 +31,7 @@
     </div>
     <div class="avatar">
         <!-- 3. Avatar của người bạn muốn gởi lời chúc -->
-        <img src="Screenshot 2021-11-19 220706.png" alt="" class="avatar__img" onclick="showMessage()" />
+        <img onclick="showVideo()" src="Screenshot 2021-11-19 220706.png" alt="" class="avatar__img" onclick="showMessage()" />
         <!-- 4. Tên của người đó -->
         <h1 onclick="showVideo()" class="avatar__title">THẦY ÂN</h1>
     </div>
@@ -42,23 +42,33 @@
             <video class="video_office" width="700" height="400" controls>
                 <source src="myvideo.mp4" type="video/mp4"> 
             </video>
-            <button onclick="stopVideo()" class="video_btn">
-                STOP
-            </button>
+            <div class="btn">
+                <button onclick="startVideo()" class="video_btn"> PLAY </button>
+                <button onclick="stopVideo()" class="video_btn"> STOP </button>
+            </div>
         </div>
     </div>
     <!-- 5. Phần nhạc -->
-    <audio id="player" autoplay loop>
-        <source src="./music.mp3" type="audio/mp3">
+    <audio class ="music" autoplay>
+        <source src="music.mp3" type="audio/mp3">
     </audio>
 </div>
 <script>
    var videoBlock = document.querySelector(".video_overlay");
+   var myVideo = document.querySelector(".video_office");
+   var myMusic = document.querySelector(".music");
+   myVideo.controls = false;
+   function startVideo(){
+       myVideo.play();
+   }
    function showVideo(){
         videoBlock.style.display = "flex";
+        myMusic.pause();
    }
    function stopVideo(){
         videoBlock.style.display = "none";
+        myVideo.load()
+        myMusic.play()
    }
 </script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
